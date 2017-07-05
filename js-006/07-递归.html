@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    //    用递归计算1+100和
+
+    console.log(getSum(100));
+    function getSum(n) {
+        if (n < 1) {
+            return 0;
+        }
+        return n + getSum(n - 1);
+
+    }
+
+    console.log(getProduct(3));
+
+    function getProduct(n) {
+        if (n < 2 && n !== 0) {
+            return 1;
+        }
+        return n * getProduct(n - 1);
+
+    }
+
+
+    console.log(feiboqina(12));
+    function feiboqina(n) {
+        if(n===1 || n===2){
+            return 1;
+        }
+        return feiboqina(n - 1) + feiboqina(n - 2);
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+
+    var PI = Math.PI;
+
+
+    function getlong(r) {
+        var long = 2 * PI * r;
+        return long;
+    }
+
+
+    function getArea(r) {
+        var area = PI * Math.pow(r, 2);
+        return area;
+    }
+
+
+    function getMax(a, b) {
+        return a > b ? a : b;
+
+    }
+
+
+    function getMacThree(a, b, c) {
+        var d = a > b ? a : b;
+        return d > c ? d : c;
+    }
+
+
+    function getArrMax(array) {
+        var max = array[0];
+        for (var i = 1; i < array.length; i++) {
+            if (max < array[i]) {
+                max = array[i];
+            }
+
+        }
+        return max;
+
+    }
+
+    function getArrMin(array) {
+        var min = array[0];
+        for (var i = 1; i < array.length; i++) {
+            if (min > array[i]) {
+                min = array[i];
+            }
+
+        }
+        return min;
+
+    }
+
+
+    function reverse1(array) {
+        var newArr = [];
+        for (var i = array.length - 1; i >= 0; i--) {
+            newArr[newArr.length] = array[i];
+        }
+        return newArr;
+    }
+
+    function reverse2(array) {
+        for (var i = 0; i < array.length / 2; i++) {
+            var temp = array[i];
+            array[i] = array[array.length - 1 - i];
+            array[array.length - 1 - i] = temp;
+        }
+        return array;
+    }
+
+
+    function bubble(array) {
+        //外循环控制轮数，内循环控制次数
+        for (var i = 0; i < array.length - 1; i++) {
+
+            var flag = true;
+            for (var j = 0; j < array.length - 1 - i; j++) {
+                if (array[j] > array[j + 1]) {
+                    var temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                    flag = false;
+                }
+            }
+
+            if (flag) {
+                return array;
+            }
+        }
+    }
+
+
+    function getJC(num) {
+
+        var sumJC = 1;
+
+        for (var i = 1; i <= num; i++) {
+            sumJC *= i;
+        }
+        return sumJC;
+    }
+
+
+    function isPrime(num) {
+        var bool = true;
+        for (var i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) {
+                bool = false
+            }
+        }
+        return bool;
+
+    }
+
+
+    function getValue(n) {
+        var num1 = 1;
+        var num2 = 1;
+        for (var i = 3; i <= n; i++) {
+            var temp = num2;
+            num2 += num1;
+            num1 = temp;
+
+            console.log(num2);
+        }
+
+    }
+
+    function isRN(year) {
+        if (year % 4 === 0 && year % 100 !== 0 || year % 400 === 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function getDays(year, month, day) {
+        var arr = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+        for (var i = 0; i < month - 1; i++) {
+            day += arr[i];
+
+        }
+        if (isRN(year) && month > 2) {
+            day += 1;
+        }
+
+        return day;
+    }
+
+    console.log(getDays(2016, 1, 4));
+    console.log(getDays(2016, 3, 1));
+</script>
+
+</body>
+</html>

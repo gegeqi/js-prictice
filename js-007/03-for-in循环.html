@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    //    要用for in循环
+    /*var json = {"name": "zhangsan", "age": 18, "arr": [1, 2, 3]}
+
+    for (var i in json) {
+        console.log(i);
+        console.log(json[i]);
+    }
+
+    var arr = [1, 2, 3, 4];
+    for (var key in arr) {
+        console.log(arr[key]);
+    }
+*/
+
+    //    制作一个json
+    var json = {};
+    console.log(json);
+    for (var i = 1; i < 10; i++) {
+        json[i] = i * 10;
+    }
+    console.log(json);
+
+    for (var key in json) {
+        console.log(json[key]);
+    }
+
+</script>
+
+</body>
+</html>

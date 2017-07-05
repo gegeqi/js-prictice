@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //    1.匿名函数,直接调用，后面直接添加小括号
+    (function () {
+        console.log("匿名函数一")
+    })()
+
+    //    2.事件的绑定
+
+    document.onclick = function () {
+        console.log("匿名函数二");
+    };
+    //3.定时器
+    setInterval(function () {
+        console.log("匿名函数三");
+    },1000);
+
+
+</script>
+
+
+</body>
+</html>
