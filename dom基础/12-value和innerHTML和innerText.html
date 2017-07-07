@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+</head>
+<body>
+
+
+<input id="inp1" type="text" value="value属性"></input>
+
+<div id="box1">
+    我是box1
+    <div id="box2">我是box2</div>
+</div>
+
+<div id="box3">
+    我是box1
+    <div id="box4">我是box2</div>
+</div>
+<script>
+
+
+//    value:标签的属性
+console.log(document.getElementById("inp1").value);
+
+
+//innerHTML:识别标签，获取双闭合标签里面的内容
+
+
+console.log(document.getElementById("box1"));
+document.getElementById("box1").innerHTML = "<h1>innerHTML</h1>"
+
+
+//innerText:不识别标签，获取双闭合标签里面的内容
+console.log(document.getElementById("box3"));
+document.getElementById("box3").innerText = "<h1>innerText</h1>"
+
+
+
+
+</script>
+
+</body>
+</html>

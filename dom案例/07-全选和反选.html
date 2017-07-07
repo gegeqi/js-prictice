@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+
+    table, tr, td {
+        border: 1px solid #ddd;
+    }
+
+    thead {
+        background: dodgerblue;
+    }
+
+    tbody {
+        background: #ccc;
+    }
+
+    table {
+        margin: 100px auto;
+    }
+
+
+</style>
+<script>
+    window.onload = function () {
+
+        var topInp = document.getElementById("theadInp");
+        var tbody = document.getElementsByTagName("tbody")[0];
+        var botInpArr = tbody.getElementsByTagName("input");
+
+        topInp.onclick = function () {
+            /* if (topInp.checked) {
+             for (var i = 0; i < botInpArr.length; i++) {
+             botInpArr[i].checked = true;
+             }
+             } else {
+             for (var i = 0; i < botInpArr.length; i++) {
+             botInpArr[i].checked = false;
+             }
+             }*/
+
+
+            for (var i = 0; i < botInpArr.length; i++) {
+                botInpArr[i].checked = this.checked;
+            }
+
+
+        }
+
+
+        for (var i = 0; i < botInpArr.length; i++) {
+            botInpArr[i].onclick = function () {
+                var bool = true;
+                for (var j = 0; j < botInpArr.length; j++) {
+                    if (!botInpArr[j].checked) {
+                        bool = false;
+                    }
+                }
+                topInp.checked = bool;
+
+            }
+
+        }
+
+
+    }
+
+
+</script>
+
+
+<body>
+
+<table cellpadding="0" cellspacing="0">
+    <thead>
+    <tr class="tr">
+        <td><input type="checkbox" id="theadInp"></td>
+        <td>菜名</td>
+        <td>饭店</td>
+    </tr>
+    </thead>
+    <tbody id="tbody">
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>地三鲜</td>
+        <td>狄老师</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>西红柿炒鸡蛋</td>
+        <td>席老师</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>醋溜土豆丝</td>
+        <td>粗老师</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>萝卜干</td>
+        <td>罗老师</td>
+    </tr>
+    </tbody>
+
+</table>
+
+</body>
+</html>

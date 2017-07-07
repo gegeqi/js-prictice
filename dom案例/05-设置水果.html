@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button>识别鲤鱼</button>
+<br><br>
+<select name="" id="sel">
+    <option value="0">香蕉</option>
+    <option value="1">苹果</option>
+    <option value="2">鸭梨</option>
+    <option value="3">鲤鱼</option>
+</select>
+
+
+<script>
+    var btn = document.getElementsByTagName("button")[0];
+    var opt = document.getElementsByTagName("option")[3];
+
+    btn.onclick = fn;
+    function fn() {
+        opt.selected = true;
+
+    }
+
+
+</script>
+</body>
+</html>

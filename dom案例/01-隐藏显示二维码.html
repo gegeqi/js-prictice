@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+    a {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background: url("../image/456.png");
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .show {
+        display: block;
+    }
+</style>
+
+<script>
+
+    window.onload = function () {
+        var a = document.getElementsByTagName("a")[0];
+        var div = document.getElementsByClassName("erweima")[0];
+        a.onmouseover = fn1;
+        a.onmouseout = fn2;
+
+
+        function fn1() {
+
+//            div.className = "erweima show";
+//            字符串操作，把字符串中
+
+            div.className = div.className.replace("hide", "show");
+        }
+
+
+        function fn2() {
+//            div.className = "erweima hide";
+
+            div.className = div.className.replace("show", "hide");
+        }
+    }
+</script>
+<body>
+
+<div class="nodeSmall" id="node_small">
+    <a href="#"></a>
+
+    <div class="erweima hide">
+        <img src="../image/456.png" alt="二维码">
+    </div>
+</div>
+
+</body>
+</html>

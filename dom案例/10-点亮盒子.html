@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        button {
+            margin: 10px;
+            width: 60px;
+            height: 40px;
+            cursor: pointer;
+        }
+
+        .current {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<button>按钮1</button>
+<button>按钮2</button>
+<button>按钮3</button>
+<button>按钮4</button>
+<button>按钮5</button>
+
+<script>
+    var btn = document.getElementsByTagName("button");
+
+    for (var i = 0; i < btn.length; i++) {
+        btn[i].onmouseover = function () {
+//            排他思想（干掉所有人，剩余自己一个）
+//            排他思想一般和for循环连用
+
+            for (var j = 0; j < btn.length; j++) {
+                btn[j].className = "";
+            }
+
+            this.className = "current";
+        }
+//        btn[i].onmouseout = function () {
+//            this.className = "";
+//        }
+
+    }
+
+
+</script>
+</body>
+</html>
