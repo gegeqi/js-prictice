@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        window.onload = function () {
+            /*var box = document.getElementById("box");
+            console.log(box);
+            box.onmouseover = function () {
+                box.src = "../image/jd2.png";
+            }
+            box.onmouseout = function () {
+                box.src = "../image/jd1.png";
+            }*/
+
+            var img = document.getElementById("box");
+
+            img.onmouseover = fn1;
+            img.onmouseout = fn2;
+
+            function fn1() {
+                this.src = "../image/jd2.png";
+            }
+            function fn2() {
+                this.src = "../image/jd1.png";
+            }
+        }
+
+    </script>
+</head>
+<body>
+
+<img id="box" src="../image/jd1.png" style="cusor:pointer;border: 1px solid #ccc;" alt="京东狗">
+
+</body>
+</html>

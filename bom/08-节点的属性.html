@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            var eleNode = document.getElementsByTagName("img")[0];
+
+//            属性获取两种方式
+//            1.元素节点.属性或者[属性]
+            console.log(eleNode.src);
+            console.log(eleNode.tagName);
+            console.log(eleNode["title"]);
+            console.log(eleNode["className"]);
+            console.log(eleNode["alt"]);
+//2.元素节点.方法（）
+
+            console.log(eleNode.getAttribute("id"));
+            eleNode.setAttribute("id", "hahah");
+            console.log(eleNode.id);
+            eleNode.removeAttribute("id");
+            console.log(eleNode.id);
+
+
+        }
+    </script>
+</head>
+<body>
+<img class="box" title="pic" id="aaa" src="../image/jd1.png" alt="京东狗"/>
+</body>
+</html>

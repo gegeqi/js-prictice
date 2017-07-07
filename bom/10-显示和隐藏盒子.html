@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 300px;
+            height: 100px;
+            background-color: pink;
+        }
+        .show {
+            display: block;
+        }
+
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<button id="btn">隐藏</button>
+<div>
+    公无渡河，公竟渡河！
+</div>
+
+<script>
+//    1.获取事件源
+var btn = document.getElementById("btn");
+var div = document.getElementsByTagName("div")[0];
+
+//    2.绑定事件
+btn.onclick = function () {
+    if(this.innerHTML === "隐藏"){
+        div.className = "hide";
+        this.innerHTML = "显示";
+    }else {
+        div.className = "show";
+        this.innerHTML = "隐藏";
+    }
+}
+//    3.书写事件驱动
+
+
+
+
+
+</script>
+</body>
+</html>

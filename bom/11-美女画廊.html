@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            display: inline-block;
+            list-style: none;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>
+    美女画廊
+</h2>
+<a href="#" onclick="return false">注册</a>
+<ul id="imagegallery">
+    <li>
+        <a href="../image/1.jpg" title="美女A">
+            <img src="../image/1-small.jpg" alt="美女1" width="100">
+        </a>
+    </li>
+    <li>
+        <a href="../image/2.jpg" title="美女B">
+            <img src="../image/2-small.jpg" alt="美女2" width="100">
+        </a>
+    </li>
+    <li>
+        <a href="../image/3.jpg" title="美女C">
+            <img src="../image/3-small.jpg" alt="美女3" width="100">
+        </a>
+    </li>
+    <li>
+        <a href="../image/4.jpg" title="美女D">
+            <img src="../image/4-small.jpg" alt="美女4" width="100">
+        </a>
+    </li>
+</ul>
+
+
+<div style="clear:both;"></div>
+
+<img src="../image/placeholder.png" width="400" height="250" id="image">
+
+<div id="des">选择一个图片</div>
+
+
+<script>
+
+    var ul = document.getElementById("imagegallery");
+    var aArr = ul.getElementsByTagName("a");
+    var img = document.getElementById("image");
+    var des = document.getElementById("des");
+
+
+    //    绑定事件
+    for (var i = 0; i < aArr.length; i++) {
+        aArr[i].onclick = function () {
+            //修改属性
+ //          this指的是函数调用者，和并无关系
+            img.src = this.href;
+            des.innerHTML = this.title;
+            return false;
+        }
+    }
+
+
+</script>
+
+</body>
+</html>

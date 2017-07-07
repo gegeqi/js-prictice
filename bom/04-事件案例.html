@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<script>-->
+    <!--window.onload=function () {-->
+
+    <!--}-->
+    <!--</script>-->
+
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #topBanner {
+            background: pink;
+            height: 80px;
+        }
+
+        .w {
+            position: relative;
+            width: 1210px;
+            margin: 10px auto;
+        }
+
+        img {
+            width: 1210px;
+            height: 80px;
+            background-color: blue;
+        }
+
+        a {
+            text-decoration: none;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            color: #ffffff;
+            background-color: #000000;
+            width: 20px;
+            height: 20px;
+            font: 700 14px/20px "simsum";
+            text-align: center;
+        }
+
+        .hide {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+<div id="topBanner">
+    <div class="w">
+        <img src="" alt="">
+        <a href="#" id="closeBanner">×</a>
+    </div>
+</div>
+
+<script>
+    //点击按钮，隐藏盒子
+    //步骤：点击a链接让top-banner隐藏（加隐藏类名）
+    //    1.获取事件源
+    //    2.绑定事件
+    //    3.书写事件驱动程序
+
+    var closeBanner = document.getElementById("closeBanner");
+    console.log(closeBanner);
+    var topBanner = document.getElementById("topBanner")
+    console.log(topBanner);
+    closeBanner.onclick = function () {
+        topBanner.className = "hide";
+    }
+
+
+</script>
+
+</body>
+</html>
