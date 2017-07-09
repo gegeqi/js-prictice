@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="box1">
+    <div id="box2"></div>
+</div>
+
+<script src="./tools.js">
+</script>
+<script>
+    console.log(getEle("box1").firstChild);
+    //获取兄弟节点
+    function fn(ele) {
+        var arr = ele.parentNode.children;
+        var newArr = [];
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] !== ele) {
+                newArr.push(arr[i]);
+            }
+        }
+
+        return newArr;
+    }
+
+</script>
+
+</body>
+</html>

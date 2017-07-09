@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <input type="text"/>
+    <input type="text"/>
+    <input type="text"/>
+    <input type="text"/>
+    <input type="text"/>
+    <button>设置</button>
+    </ul>
+<script>
+    var inp = document.getElementsByTagName("input");
+    var btn = document.getElementsByTagName("button")[0];
+    
+    btn.onclick = function () {
+        for(var i = 0;i<inp.length;i++){
+            inp[i].onfocus = function () {
+                this.style.border = "2px solid red";
+                this.style.backgroundColor = "#ccc";
+            }
+            inp[i].onblur = function () {
+                this.style.border = "";
+                this.style.backgroundColor = "";
+            }
+
+        }
+    }
+
+</script>
+</body>
+</html>

@@ -27,6 +27,11 @@
     var btn = document.getElementsByTagName("button");
 
     for (var i = 0; i < btn.length; i++) {
+//        btn[i].setAttribute("index", i);
+        btn[i].index = i;
+
+
+
         btn[i].onmouseover = function () {
 //            排他思想（干掉所有人，剩余自己一个）
 //            排他思想一般和for循环连用
@@ -36,6 +41,8 @@
             }
 
             this.className = "current";
+//            alert(this.getAttribute("index"));
+            alert(this.index);
         }
 //        btn[i].onmouseout = function () {
 //            this.className = "";

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: url("../image/01.jpg") no-repeat;
+        }
+
+        .box {
+            height: 170px;
+            padding-top: 30px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        img {
+            width: 200px;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <img src="../image/01.jpg" alt="">
+    <img src="../image/02.jpg" alt="">
+    <img src="../image/03.jpg" alt="">
+    <img src="../image/04.jpg" alt="">
+    <img src="../image/05.jpg" alt="">
+
+</div>
+
+<script>
+    //    点击图片，body背景图改变
+    var img = document.getElementsByTagName("img");
+    var body = document.body;
+    for (var i = 0; i < img.length; i++) {
+        img[i].onclick = function () {
+            body.style.backgroundImage = "url(" + this.src + ")";
+        }
+    }
+
+</script>
+</body>
+</html>

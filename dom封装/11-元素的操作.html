@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li id="li1">我是参照标签</li>
+</ul>
+
+<script>
+    //    document.write(),不常用，会覆盖原来页面
+    //    a.innerHTML()用的比较多，绑定内容比较方便
+    //document.createElement()用的也是比较多，指定数量的时候一般用他
+
+    var ul = document.getElementsByTagName("ul")[0];
+    var li1 = document.getElementById("li1");
+    //    创建，添加，删除，替换
+    //    document.write("<li>write创建</li>");
+
+    var li2 = document.createElement("li");
+    li2.innerText = "我是createElement创建的";
+    ul.appendChild(li2);
+
+    var li3 = document.createElement("li");
+    li3.innerText = "我是li3，用的insertBefore";
+
+    ul.insertBefore(li3, li1);
+
+
+//    删除节点
+
+//    ul.removeChild(li3);
+
+//    替换
+    ul.replaceChild(li3, li2);
+
+//    克隆node.cloneNode()一般都是深层复制
+
+    for(var i = 0;i<5;i++){
+        var newLi = li3.cloneNode(true);
+        ul.appendChild(newLi);
+    }
+</script>
+
+</body>
+</html>

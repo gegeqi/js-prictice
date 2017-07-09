@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul {
+            width: 1210px;
+            margin: 100px auto;
+        }
+
+        li {
+            height: 34px;
+            cursor: pointer;
+            font: 500 16px/34px "simsun";
+
+        }
+
+
+    </style>
+</head>
+<body>
+<ul>
+    <li>北京股市 2035-04.7 (-0.78)</li>
+    <li>上海股市 2035-04.7 (-0.78)</li>
+    <li>西安股市 2035-04.7 (-0.78)</li>
+    <li>广州股市 2035-04.7 (-0.78)</li>
+    <li>三亚股市 2035-04.7 (-0.78)</li>
+    <li>重庆股市 2035-04.7 (-0.78)</li>
+</ul>
+
+<script>
+    //需求：利用childNodes实现隔行变色
+    //    简单版
+    //    var arr = document.getElementsByTagName("li");
+    //
+    //    for (var i = 0; i < arr.length; i++) {
+    //        if (i % 2 === 0) {
+    //            arr[i].style.backgroundColor = "#ccc";
+    //        }
+    //    }
+
+    //    复杂版
+    var ul = document.getElementsByTagName("ul")[0];
+    var liArr = ul.childNodes;
+
+    //    把不是元素节点的排除
+
+    var newArr = [];
+    for (var i = 0; i < liArr.length; i++) {
+        if (liArr[i].nodeType === 1) {
+            newArr.push(liArr[i]);
+        }
+    }
+
+    for (var i = 0; i < newArr.length; i++) {
+        if (i % 2 === 0) {
+            newArr[i].style.backgroundColor = "red";
+        }
+    }
+
+
+</script>
+</body>
+</html>

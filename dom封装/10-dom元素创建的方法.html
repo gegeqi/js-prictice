@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>创建</button>
+<ul></ul>
+<script>
+    document.write("<li>我是document.write创建的</li>");
+    var btn = document.getElementsByTagName("button")[0];
+    var ul = document.getElementsByTagName("ul")[0];
+
+    btn.onclick = function () {
+        document.write("<li>我是document.write");
+    }
+
+    ul.innerHTML = "<li id='li1'>我是innerhtml创建的</li>"
+
+
+    //    第三种，利用dom的api
+    var li = document.createElement("li");
+    li.innerHTML = "我是createElement创建的";
+    console.log(li);
+
+
+    //    在父元素的最后添加元素
+    ul.appendChild(li);
+
+
+    //    指定位置添加
+    var li1 = document.getElementById("li1");
+    ul.insertBefore(li, li1);
+
+
+</script>
+</body>
+</html>

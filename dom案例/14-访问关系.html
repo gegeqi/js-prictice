@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li {
+            list-style: none;
+            width: 100px;
+            height: 100px;
+            background-color: #ff88b3;
+            margin: 5px;
+        }
+
+    </style>
+</head>
+<body>
+<ul>
+    <li class="box1"></li>
+    <li class="box2"></li>
+    <li id="box3"></li>
+    <li class="box4"></li>
+    <li class="box5"></li>
+</ul>
+
+<script>
+    //    父盒子
+    var box3 = document.getElementById("box3");
+    box3.parentNode.style.backgroundColor = "blue";
+
+    //兄弟节点(previousElementSibling和nextSibling)
+    //    previousElementSibling和nextElementSibling ie6,7,8不行（ie6,7,8不能获取文本节点）删去Element可以使用
+    box3.previousElementSibling.style.backgroundColor = "red";
+    box3.nextElementSibling.style.backgroundColor = "yellow";
+
+    //    单个子元素
+    var first = box3.parentNode.firstElementChild || box3.parentNode.firstChild;
+    var last = box3.parentNode.lastElementChild || box3.parentNode.lastChild;
+    first.style.backgroundColor = "orange";
+    last.style.backgroundColor = "green";
+
+    //    所有子元素
+    var arr = box3.parentNode.children;
+    for(var i = 0;i<arr.length;i++){
+        arr[i].style.backgroundColor = "#000";
+    }
+
+</script>
+</body>
+</html>

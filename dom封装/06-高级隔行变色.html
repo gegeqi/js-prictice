@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        table, tr, td {
+            border: 1px solid #ddd;
+        }
+
+        thead {
+            background: dodgerblue;
+        }
+
+        tbody tr{
+            cursor: pointer;
+        }
+
+        table {
+            margin: 100px auto;
+        }
+
+
+    </style>
+
+</head>
+<body>
+<table cellpadding="0" cellspacing="0">
+    <thead>
+    <tr class="tr">
+        <td>001</td>
+        <td>菜名</td>
+        <td>饭店</td>
+    </tr>
+    </thead>
+    <tbody id="tbody">
+    <tr>
+        <td>002</td>
+        <td>地三鲜</td>
+        <td>狄老师</td>
+    </tr>
+    <tr>
+        <td>003</td>
+        <td>西红柿炒鸡蛋</td>
+        <td>席老师</td>
+    </tr>
+    <tr>
+        <td>004</td>
+        <td>醋溜土豆丝</td>
+        <td>粗老师</td>
+    </tr>
+    <tr>
+        <td>005</td>
+        <td>萝卜干</td>
+        <td>罗老师</td>
+    </tr>
+    </tbody>
+
+</table>
+
+<script>
+    var tbody = document.getElementById("tbody");
+    var trArr = tbody.children;
+
+    for(var i = 0;i<trArr.length;i++){
+        if(i%2 === 0){
+            trArr[i].style.backgroundColor = "#ccc";
+        }
+
+        var color = "";
+        trArr[i].onmouseover = function () {
+            color = this.style.backgroundColor;
+            this.style.backgroundColor = "red";
+        }
+        trArr[i].onmouseout = function () {
+            this.style.backgroundColor = color;
+        }
+
+    }
+
+
+
+
+
+</script>
+
+</body>
+</html>
