@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        select {
+            height: 240px;
+            width: 180px;
+            font-size: 16px;
+            background-color: #74ff38;
+        }
+    </style>
+</head>
+<body>
+<select name="" id="sel1" size="10" multiple>
+    <option value="0">1香蕉</option>
+    <option value="1">2苹果</option>
+    <option value="2">3鸭梨</option>
+    <option value="3">4葡萄</option>
+</select>
+<input type="button" value=">>>">
+<input type="button" value="<<<">
+<input type="button" value=">">
+<input type="button" value="<">
+
+<select name="" id="sel2" size="10" multiple>
+
+</select>
+<script>
+    var sel1 = document.getElementById("sel1");
+    var sel2 = document.getElementById("sel2");
+
+    var inpArr = document.getElementsByTagName("input");
+    inpArr[0].onclick = function () {
+        fn(sel1, sel2);
+    }
+    inpArr[1].onclick = function () {
+        fn(sel2, sel1);
+    }
+
+    function fn(ele1, ele2) {
+        var arr = ele1.children;
+        for (var i = arr.length - 1; i >= 0; i--) {
+            ele2.appendChild(arr[0]);
+        }
+    }
+
+
+    //    需求二：点击>和<，所有被选定的子元素都跑到对方的标签中
+
+
+    inpArr[2].onclick = function () {
+        fn1(sel1, sel2);
+    }
+
+    inpArr[3].onclick = function () {
+        fn1(sel2, sel1);
+    }
+    function fn1(ele1, ele2) {
+        var arr = ele1.children;
+        for (var i = arr.length - 1; i >= 0; i--) {
+            if (arr[i].selected) {
+                arr[i].selected = false;
+                ele2.appendChild(arr[i]);
+            }
+        }
+
+//        获取ele2中的数组，将其变为真数组，之后对其尽心排序
+        var aaa = Array.from(ele2.children).sort(function (a, b) {
+            return a.value - b.value;
+        });
+
+//        删除所有子元素
+        for(var i = 0;i<ele2.children.length;i++){
+            ele2.removeChild(ele2.children[i]);
+        }
+
+//        将排序后的写入ele2
+
+        for(var i = 0;i<aaa.length;i++){
+            ele2.appendChild(aaa[i]);
+        }
+
+    }
+
+
+</script>
+
+</body>
+</html>

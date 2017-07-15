@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            width: 392px;
+            padding: 5px;
+            list-style: none;
+            border: 1px solid #f00;
+        }
+
+        li:hover {
+            background-color: #ccc;
+            line-height: 22px;
+        }
+
+        .box {
+            width: 500px;
+            margin: 200px auto;
+        }
+
+        input {
+            width: 400px;
+        }
+
+        button {
+            width: 60px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="box">
+    <input type="text">
+    <button value="搜索">搜索</button>
+
+    <!--<ul>-->
+    <!--<li>aaa</li>-->
+    <!--<li>bbb</li>-->
+    <!--<li>ccc</li>-->
+    <!--</ul>-->
+</div>
+
+
+<script>
+    //    需求：输入内容(输入事件，键盘弹起事件)，模拟服务器获取内容，创建ul，并在其中显示
+
+    var box = document.getElementById("box");
+    console.log(box);
+    var inp = box.children[0];
+
+//    绑定事件(oninput或者onkeyup)
+    inp.oninput = function () {
+        var ul = document.createElement("ul");
+        ul.innerHTML = "<li>aaa</li><li>bbb</li><li>ccc</li>";
+        box.appendChild(ul);
+    }
+
+
+
+</script>
+</body>
+</html>
