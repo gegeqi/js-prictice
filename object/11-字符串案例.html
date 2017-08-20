@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    var str1 = "我爱你中国，我亲爱的母亲";
+
+    console.log(str1.slice(3, 10));
+
+
+    var str2 = "ajdfdjfasaajjjajaajja";
+
+    for (var i = 0; i < str2.length; i++) {
+        if (str2.charAt(i) === "j") {
+            console.log(i);
+        }
+    }
+
+    console.log(str2.replace(/j/gi, "!"));
+
+
+    //判断一个字符串中出现的次数最多的字符，统计这个个数
+
+    //思路：定义一个json,然后判断json中是否有这个属性，如果有，count加一，没有则添加属性
+
+    var json = {};
+    for (var i = 0; i < str2.length; i++) {
+        var key = str2.charAt(i);
+        if (json[key]) {
+            json[key]++;
+        } else {
+            json[key] = 1;
+        }
+    }
+
+    console.log(json);
+
+
+    //获取json中值最大的选项
+
+    var maxKey = "";
+    var maxValue = 0;
+
+    for (var k in json) {
+        if (json[k] > maxValue) {
+            maxKey = k;
+            maxValue = json[k];
+        } else if (json[k] === maxValue) {
+            maxKey += k;
+        }
+    }
+
+    console.log(maxKey + ":" + maxValue);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{
+            height: 30px;
+            line-height: 30px;
+            margin: 3px auto;
+            background-color: pink;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<button>创建四个移民li</button>
+<ul>
+    <li>我是土著li</li>
+    <li>我是土著li</li>
+    <li>我是土著li</li>
+    <li>我是土著li</li>
+</ul>
+
+<script>
+
+    var ul = document.getElementsByTagName("ul")[0];
+    var liArr = ul.children;
+    var btn = document.getElementsByTagName("button")[0];
+
+    
+    for(var i = 0;i<liArr.length;i++){
+        liArr[i].onclick = function () {
+
+            alert("i am 土著li");
+        }
+    }
+    
+    btn.onclick = function () {
+        for(var i = 1;i<= 4;i++){
+            var newLi = document.createElement("li");
+            newLi.innerHTML = "我是移民li";
+            ul.appendChild(newLi);
+        }
+    }
+
+    //普通事件绑定，没有办法为新创建的元素绑定事件，所以我们要使用冒泡的特性
+
+    //事件委托
+     ul.onclick = function (event) {
+         //获取事件传递过来的值
+         event = event || window.event;
+
+         var target = event.target || event.srcElement;
+         console.log(target.tagName);
+
+         //判断标签吗，如果是li标签，弹窗
+         if("LI" === target.tagName){
+             alert("i am li");
+         }
+     }
+
+
+</script>
+</body>
+</html>

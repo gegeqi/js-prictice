@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    .site-nav{
+        height: 30px;
+        background-color: #ccc;
+    }
+
+    .topBanner{
+        background-color: #00f;
+    }
+    .w{
+        position: relative;
+        margin: 0 auto;
+        height:80px;
+        width: 1210px;
+        background-color: pink ;
+    }
+    .search{
+        margin: 0 auto;
+        height:80px;
+        width: 1210px;
+        background-color: red ;
+    }
+    a{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 25px;
+        height: 25px;
+        text-align: center;
+        line-height: 25px;
+        background-color: #000;
+        color: #fff;
+        text-decoration: none;
+    }
+</style>
+<body>
+<div class="site-nav"></div>
+<div class="top-banner" style="opacity: 1">
+    <div class="w">
+        <a href="#">x</a>
+    </div>
+</div>
+<div class="search"></div>
+
+
+<script>
+    var topBanner = document.getElementsByClassName("top-banner")[0];
+
+    var a = topBanner.children[0].firstElementChild || topBanner.children[0].firstChild;
+
+    var timer = null;
+    a.onclick = function () {
+         timer = setInterval(function () {
+            topBanner.style.opacity -= 0.1;
+            if(topBanner.style.opacity<=0){
+                topBanner.style.display = "none";
+                clearInterval(timer);
+            }
+        },50)
+    }
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

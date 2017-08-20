@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>赋诗</button>
+
+<script>
+    var btn = document.getElementsByTagName("button")[0];
+
+    //    btn.onclick = function () {
+    //        alert(1);
+    //    }
+
+    //第一种解绑方式
+    //    btn.onclick = null;
+
+    //第二种
+
+    //    btn.addEventListener("click", fn);
+    //    btn.removeEventListener("click", fn);
+
+    //第三种
+
+    //    btn.attachEvent("onclick", fn);
+    //    btn.detachEvent("onclick", fn);
+
+
+    EventListen = {
+        addEvent: function (ele, fn, str) {
+            //通过判断调用的方式兼容ie678
+            //判断浏览器是否支持该方法，如果支持则调用
+
+            if (ele.addEventListener) {
+                ele.addEventListener(str, fn)
+            } else if (ele.attachEvent) {
+                ele.attachEvent("on" + str, fn);
+            } else {
+                var oldEvent = ele["on" + str];
+                ele["on" + str] = function () {
+                    //不能直接函数，我们不知道以前有没有绑定过相同的事件
+                    //如果以前有绑定过相同的事件 ，执行完之前的事件，在执行之后的事件
+
+                    if (oldEvent) {
+                        //因为oldEvent本身就是函数本身，后面加（）就是执行函数；
+                        oldEvent();
+                    }
+                    fn();
+                }
+            }
+        },
+        deleteEvent: function (ele, fn, str) {
+            if (ele.removeEventListener) {
+                ele.removeEventListener(str, fn);
+            } else if (ele.detachEvent) {
+                ele.detachEvent("on" + str, fn);
+            } else {
+                ele["on" + str] = null;
+            }
+        }
+    }
+
+
+    //    btn.addEventListener("click", fn);
+
+    EventListen.addEvent(btn, fn, "click");
+    EventListen.deleteEvent(btn, fn, "click");
+
+
+    function fn() {
+        alert(1);
+    }
+</script>
+
+</body>
+</html>

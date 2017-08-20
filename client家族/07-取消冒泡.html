@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box"></div>
+
+<script>
+
+    var box = document.getElementsByClassName("box")[0];
+
+    box.onmousemove = function (event) {
+        console.log("i am box");
+
+        //阻止冒泡
+        event = event || window.event;
+        if (event && event.stopPropagation()) {
+            event.stopPropagation();
+        } else {
+            event.cancelBubble = true;
+        }
+    }
+    document.onmousemove = function () {
+
+        console.log("i am document");
+
+
+    }
+</script>
+</body>
+</html>

@@ -52,17 +52,51 @@
 <script>
     //    需求：输入内容(输入事件，键盘弹起事件)，模拟服务器获取内容，创建ul，并在其中显示
 
+    var arr = ["a", "ab", "ac", "ad", "aa", "aaa"];
     var box = document.getElementById("box");
     console.log(box);
     var inp = box.children[0];
 
-//    绑定事件(oninput或者onkeyup)
+    //    绑定事件(oninput或者onkeyup)
     inp.oninput = function () {
+
+        var newArr = [];
+
+        for (var i = 0; i < arr.length; i++) {
+
+            var val = this.value;
+            if (arr[i].indexOf(val) === 0) {
+                newArr.push("<li>" + arr[i] + "</li>");
+                console.log(arr[i]);
+            }
+        }
+
+
+        var str = newArr.join("");
+
+
+        //bug1.创建新的ul之前删除旧的ul
+        if (box.children[2]) {
+            box.removeChild(box.children[2]);
+        }
+
+
+        //bug2.如果input输入为空，不能生成ul
+        //进入切断函数
+        //bug3.如果arr没有以input为开头的字符串，进入阶段函数
+        if (this.value.length === 0 || newArr.length === 0) {
+            return;
+        }
+
+
+
+        //创建一个字符串，里面添加满了li和对应的内容
+
         var ul = document.createElement("ul");
-        ul.innerHTML = "<li>aaa</li><li>bbb</li><li>ccc</li>";
+        //把创建好的内容添加到li中
+        ul.innerHTML = str;
         box.appendChild(ul);
     }
-
 
 
 </script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="javascript:;">点击我可以创建新的界面</a>
+<a href="javascript:;">点击我可以关闭界面</a>
+
+
+<script>
+
+    var a1 = document.getElementsByTagName("a")[0];
+    var a2 = document.getElementsByTagName("a")[1];
+
+    a1.onclick = function () {
+        window.open("http://www.jd.com", "_blank");
+    }
+
+    a2.onclick = function () {
+        window.close();
+    }
+
+
+    console.log(navigator.platform);
+</script>
+</body>
+</html>

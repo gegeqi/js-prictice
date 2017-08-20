@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body, html {
+        height: 100%;
+    }
+
+    ul {
+        list-style: none;
+        height: 100%;
+    }
+
+    ul li {
+        height: 100%;
+    }
+
+    ol {
+        list-style: none;
+        position: fixed;
+        left: 5px;
+        top: 80px;
+    }
+
+    ol li {
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        border: 1px solid #000;
+        line-height: 50px;
+        margin-top: -1px;
+        cursor: pointer;
+    }
+</style>
+<body>
+
+<ul>
+    <li>鞋子</li>
+    <li>袜子</li>
+    <li>裤子</li>
+    <li>帽子</li>
+    <li>裙子</li>
+</ul>
+
+<ol>
+    <li>鞋子</li>
+    <li>袜子</li>
+    <li>裤子</li>
+    <li>帽子</li>
+    <li>裙子</li>
+</ol>
+
+<script src="animate.js"></script>
+<script>
+    //需求：点击ol中的li，屏幕滑动到对应ul中li的范围
+    //思路：利用window.scrollTo();利用缓动动画实现屏幕滑动
+    //步骤：制定ul和ol中li的背景色，对应li背景色
+
+    var ul = document.getElementsByTagName("ul")[0];
+    var ol = document.getElementsByTagName("ol")[0];
+    var ulLiArr = ul.children;
+    var olLiArr = ol.children;
+
+    var timer = null;
+    var target = 0;
+    var leader = 0;
+
+    var arrColor = ["pink", "blue", "yellow", "orange", "green"];
+
+    //利用for循环为两个数组元素上色
+
+    for (var i = 0; i < ulLiArr.length; i++) {
+        ulLiArr[i].style.backgroundColor = arrColor[i];
+        olLiArr[i].style.backgroundColor = arrColor[i];
+
+        //为每个li绑定点击事件
+
+        //属性绑定索引值
+        olLiArr[i].index = i;
+        olLiArr[i].onclick = function () {
+
+            //获取目标位置
+
+            target = ulLiArr[this.index].offsetTop;
+
+            //利用缓动原理实现屏幕滑动
+
+            clearInterval(timer);
+            timer = setInterval(function () {
+                //1.获取步长
+                var step = (target - leader) / 10;
+                //2.二次处理步长
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                //3.屏幕滑动
+                leader = leader + step;
+                window.scrollTo(0, leader);
+                //4.清除定时器
+                if (Math.abs(target - leader) <= Math.abs(step)) {
+                    window.scrollTo(0, leader);
+                    clearInterval(timer);
+                }
+            }, 25);
+        }
+    }
+
+    window.onscroll = function () {
+        //每次滑动屏幕，把屏幕卷曲的头部赋值给leader，模拟获取显示区域距离顶部距离
+
+        leader = scroll().top;
+    }
+
+
+</script>
+</body>
+</html>

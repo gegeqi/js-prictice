@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body, html {
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mask {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: none;
+        }
+
+        .login {
+            width: 400px;
+            height: 300px;
+            cursor: pointer;
+            background-color: #fff;
+            margin: 300px auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="mask">
+    <div class="login" id="login"></div>
+</div>
+
+<a href="#">登录</a>
+<a href="#">注册</a>
+
+<script src="jq.0.0.1.js"></script>
+<script>
+
+    //需求:点击登录按钮显示模态框，点击出去login以外的所有盒子，隐藏模态框
+    //步骤：
+    //1.给登录绑定事件
+    var mask = document.getElementsByTagName("div")[0];
+    var a = document.getElementsByTagName("a")[1];
+
+    a.onclick = function (event) {
+        //显示模态框
+        show(mask);
+
+        event = event || window.event;
+
+        if (event && event.stopPropagation()) {
+            event.stopPropagation();
+        } else {
+            event.cancelBubble = true;
+        }
+    }
+    //2.给document绑定事件，因为可以冒泡，只要判断点击不是login，
+
+    document.onclick = function (event) {
+        event = event || window.event;
+
+
+        //兼容获取事件触动时，被传递过来的对象
+        var target = event.target || event.srcElement;
+
+        if ("login" !== target.id) {
+            hide(mask);
+        }
+    }
+</script>
+
+</body>
+</html>

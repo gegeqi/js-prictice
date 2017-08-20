@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-1.11.1.js"></script>
+    <script>
+        $(function () {
+
+            //利用过滤选择器设置偶数位元素的背景
+            var jqliodd = $("ul li:odd");
+            jqliodd.css("background", "pink");
+
+            var jqlieven = $("ul li:even");
+            jqlieven.css("background", "red");
+
+            var jqlifirst = $("ul li:eq(0)");
+            jqlifirst.css("background", "yellow");
+
+
+        })
+        
+        
+    </script>
+</head>
+<body>
+
+<ul>
+    <li>今天有点迷茫啊！</li>
+    <li>今天有点迷茫啊！</li>
+    <li>今天有点迷茫啊！</li>
+    <li>今天有点迷茫啊！</li>
+    <li>今天有点迷茫啊！</li>
+    <li>今天有点迷茫啊！</li>
+</ul>
+</body>
+</html>

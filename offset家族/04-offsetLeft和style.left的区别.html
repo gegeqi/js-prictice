@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box1 {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            padding: 100px;
+            margin: 100px;
+            background-color: pink;
+
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: #ff0000;
+            position: absolute;
+            /*left: 0;*/
+            /*top: 0;*/
+        }
+    </style>
+</head>
+<body>
+<div class="box1">
+    <div class="box2" style="left: 10px"></div>
+</div>
+
+<script>
+    var box2 = document.getElementsByClassName("box2")[0];
+
+
+    //1.offsetLeft可以返回没有定位的盒子，而style.left不行
+    //如果父盒子都没有定位,以body为准
+    //style.left只能获取行内式
+
+    //2.offsetLeft返回数字，number类型，style.left返回10px，有单位
+
+    //3.offsetLeft和offsetTop只能获取值
+    //style.left和style.top可以赋值
+
+
+
+    console.log(box2.offsetLeft);
+    console.log(box2.style.left);
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+
+    console.log("----------预定义类------------");
+
+    //    console.log(/./.test("\n\r"));
+    //    console.log(/./.test("aa"));
+
+
+    console.log("----------简单类------------");
+    //    console.log(/jiandan/.test("jiandan"));
+    //    console.log(/jiandan/.test("jiandan123"));
+    //    console.log(/jiandan/.test("jianhahahah"));
+
+    //    console.log(/[jiandan]/.test("jiandan"));
+    //    console.log(/[jiandan]/.test("jiandan123"));
+    //    console.log(/[jiandan]/.test("a"));
+
+    console.log("----------负向类------------");
+
+    //可以少，多了也会返回true
+    //    console.log(/[^abc]/.test("a"));
+    //    console.log(/[^abc]/.test("aiiiii"));
+    //    console.log(/[^abc]/.test("ddd"));
+
+
+    console.log("----------范围类------------");
+
+    //    console.log(/[a-c]/.test("aaaabbc"));
+    //    console.log(/[a-c]/.test("f"));
+
+
+    console.log("----------组合类------------");
+
+
+    console.log(/[a-c1-6]/.test("aaaabbc"));
+    console.log(/[a-c1-6]/.test("f"));
+    console.log(/[a-c1-6]/.test("aa4"));
+</script>
+
+</body>
+</html>

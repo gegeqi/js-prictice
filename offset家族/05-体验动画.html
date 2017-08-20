@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            left: 50px;
+            top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<button>动画</button>
+<div class="box"></div>
+
+<script>
+    var btn = document.getElementsByTagName("button")[0];
+    var div = document.getElementsByTagName("div")[0];
+
+    
+    //闪动
+//    btn.onclick = function () {
+//        div.style.left = "500px";
+//    }
+
+    
+    btn.onclick = function () {
+        setInterval(fn, 300);
+    }
+
+    function fn() {
+        //动画原理：盒子未来位置等于现在位置加上步长
+        div.style.left = div.offsetLeft + 10 + "px";
+    }
+</script>
+
+</body>
+</html>

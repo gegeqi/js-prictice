@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 800px;
+            margin: 200px auto;
+            color: red;
+            text-align: center;
+            font: 600 30px/30px "simsun";
+        }
+    </style>
+</head>
+<body>
+<div>距离iphone8开售还有：10天10小时33分钟55秒钟123毫秒</div>
+
+<script>
+
+    //    模拟倒计时
+
+    var div = document.getElementsByTagName("div")[0];
+
+    setInterval(fn, 100);
+
+    function fn() {
+        var futureTime = new Date("2017/8/15 10:00:00");
+        var nowTime = new Date();
+
+        var sumMS = futureTime.getTime() - nowTime.getTime();
+
+//        总的毫秒值包含多少天
+        var day = parseInt(sumMS / 1000 / 60 / 60 / 24);
+
+        var hour = parseInt(sumMS / 1000 / 60 / 60 % 24);
+
+        var minute = parseInt(sumMS / 1000 / 60 % 60);
+
+        var second = parseInt(sumMS / 1000 % 60);
+
+        var ms = parseInt(sumMS % 1000);
+
+        if (day < 10) {
+            day = "0" + day;
+        }
+        if (hour < 10) {
+            hour = "0" + hour;
+        }
+        if (minute < 10) {
+            minute = "0" + minute;
+        }
+        if (second < 10) {
+            second = "0" + second;
+        }
+
+        if (ms < 10) {
+            ms = "00" + ms;
+        } else if (ms < 100) {
+            ms = "0" + ms;
+        }
+
+        div.innerText = "距离iphone8开售还有:" + day + "天" + hour + "小时" + minute + "分钟" + second + "秒钟" + ms + "毫秒";
+    }
+
+</script>
+
+</body>
+</html>

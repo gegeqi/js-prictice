@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-1.11.1.js"></script>
+    <script>
+        $(function () {
+            //find(selector);从jquery的后代中查找
+            var ul = $("ul");
+            ul.find("li").css("background", "pink");
+
+
+            //children(selector)；从jquery对象的子代查找
+            ul.children("li").css("background", "red");
+
+
+            //eq(索引值)；从jquery对象的子代查找该索引值的元素
+            ul.children().eq(0).css("background", "yellow");
+
+
+            //next();该元素的下一个兄弟节点
+            ul.children().eq(0).next().css("background", "blue");
+
+            //siblings();该元素的所有兄弟节点
+            ul.children().eq(0).next().siblings().css("border", "1px solid black");
+
+
+            //parent() 该元素的父元素
+            ul.children().eq(0).parent().css("background", "#ccc");
+
+        });
+
+
+    </script>
+</head>
+<body>
+<ul>
+    <li>今天天气不太好！！</li>
+    <li class="box">今天天气不太好！！</li>
+    <span>今天天气不太好！！</span>
+    <li class="box">今天天气不太好！！</li>
+    <i>今天天气不太好！！</i>
+    <li>今天天气不太好！！</li>
+    <a id="box" href="#">今天天气不太好！！</a>
+    <li>今天天气不太好！！</li>
+    <ol>
+        <li>ol</li>
+        <li>ol</li>
+        <li>ol</li>
+        <li>ol</li>
+        <li>ol</li>
+    </ol>
+</ul>
+</body>
+</html>

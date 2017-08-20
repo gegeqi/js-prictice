@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var num = 0;
+    //    循环计时器
+    setInterval(function () {
+        console.log(num);
+        num++;
+    }, 1000);
+
+
+    //炸弹计时器
+    setTimeout(function () {
+
+    })
+
+
+//    定义方法1
+    setInterval(function () {
+        console.log(1);
+    }, 1000);
+
+//    定义方法2
+
+    setInterval(fn, 1000);
+    function fn() {
+        console.log(2);
+    }
+
+//    定义方法3
+
+    setInterval("fn(111)", 1000);
+    function fn(aaa) {
+        console.log(aaa);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //返回值
+    //清除定时器
+    var num = 1;
+
+    //setInterval的返回值就是他的名字
+    var timer = setInterval(function () {
+        console.log(num);
+        num++;
+        if (num === 10) {
+            clearInterval(timer);
+        }
+    }, 200);
+
+
+</script>
+</body>
+</html>

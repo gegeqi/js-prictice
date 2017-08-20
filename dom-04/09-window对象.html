@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //window是bom的顶级对象，通常可以省略
+
+    window.alert(1);
+
+    //成员变量也是window的一个属性而已
+
+    var aaa = 1;
+    alert(window.aaa);
+
+    //自定义函数也是window的一个方法
+
+    function fn() {
+        console.log(111);
+    }
+
+    console.log(window.fn);
+
+
+</script>
+</body>
+</html>

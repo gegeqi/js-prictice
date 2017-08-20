@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+    <style>
+        body{
+            height: 5000px;
+        }
+    </style>
+</head>
+<body>
+<script>
+    window.onscroll = function () {
+        //没有dtd约束的，谷歌识别
+//        document.title = document.body.scrollTop.toString();
+
+        //有dtd约束的（ie6，7，8识别）
+//        document.title = document.documentElement.scrollTop.toString();
+
+//        document.title = document.body.scrollTop + document.documentElement.scrollTop;
+
+//火狐，谷歌，ie9以上的支持（不管dtd）
+//        document.title = window.pageYOffset;
+
+        //最终用
+        document.title = window.pageYOffset || document.body.scrollTop + document.documentElement.scrollTop;
+    }
+</script>
+
+</body>
+</html>

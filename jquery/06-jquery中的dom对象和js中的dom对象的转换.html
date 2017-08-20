@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style></style>
+
+    <script src="../jquery-1.11.1.js"></script>
+    <script>
+        $(window).ready(function () {
+            var box = document.getElementById("box");
+            var cbox = document.getElementsByClassName("box");
+            var div = document.getElementsByTagName("div");
+
+
+            var jqbox = $("#box");
+            var jqcbox = $(".box");
+            var jqdiv = $("div");
+
+//            console.log(box);
+//            console.log(jqbox);
+//            console.log("----------------");
+//
+//            console.log(cbox);
+//            console.log(jqcbox);
+//            console.log("----------------");
+//
+//            console.log(div);
+//            console.log(jqdiv);
+//            console.log("----------------");
+//
+//            console.log("******************");
+
+            box = $(box);
+            cbox = $(cbox);
+            console.log(cbox);
+            div = $(div);
+
+//            console.log(box);
+//            console.log(jqbox);
+//            console.log("----------------");
+//
+//            console.log(cbox);
+//            console.log(jqcbox);
+//            console.log("----------------");
+//
+//            console.log(div);
+//            console.log(jqdiv);
+//            console.log("----------------");
+
+
+            //转换成jquery对象，可以直接调用方法
+            div.css({"width": 100, "height": 100, "border": "1px solid red"});
+            box.css("background", "red");
+            cbox.css("background", "blue");
+
+            //jquery转换成js
+            jqdiv[0].style.backgroundColor = "black";
+            jqdiv.get(4).style.backgroundColor = "pink";
+
+            //js对象转换为jquery对象 $(js对象)
+            //jquery对象转换为js对象 jquery对象[0]  或者 jquery.get(0)
+
+
+
+        });
+    </script>
+</head>
+<body>
+
+<div></div>
+<div class="box"></div>
+<div id="box"></div>
+<div class="box"></div>
+<div></div>
+
+</body>
+</html>

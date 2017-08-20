@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="box">
+    <input type="text"/>
+    <span></span>
+</div>
+
+<script>
+    //需求:输入名字，两位-四位
+
+    var inp = document.getElementsByTagName("input")[0];
+    var span = inp.nextElementSibling || inp.nextSibling;
+
+    inp.onblur = function () {
+        var reg1 = /^[\u4e00-\u9fa5]{2,4}$/;
+        if (reg1.test(this.value)) {
+            span.style.color = "green";
+            span.innerHTML = "输入正确！";
+        } else {
+            span.innerHTML = "输入有误！";
+            span.style.color = "red";
+
+        }
+    }
+
+
+</script>
+</body>
+</html>

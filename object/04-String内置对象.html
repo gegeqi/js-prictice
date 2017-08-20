@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var str = "abc";
+
+    //    简单数据类型无法绑定属性
+    str.aaa = 111;
+
+    console.log(str.aaa);
+    console.log(str.length);
+    console.log(str.indexOf("b"));
+
+
+    var strObj = new String("abc");
+    strObj.aaa = 111;
+
+    console.log(strObj);
+    console.log(typeof strObj);
+    console.log(strObj.aaa);
+
+
+</script>
+</body>
+</html>

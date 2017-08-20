@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //json回顾
+    var json = {"aaa":111,"bbb":222}
+
+    //遍历for in （一般数组和dom不适用此方法）
+
+    for(var k in json){
+        console.log(k);
+        console.log(json[k]);
+    }
+
+
+    //结果为css1Compat是已经声明，BackCompat是未声明
+    alert(document.compatMode);
+
+</script>
+
+</body>
+</html>

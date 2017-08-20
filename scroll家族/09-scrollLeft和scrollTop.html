@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            height: 5000px;
+            width: 5000px;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+
+    window.onscroll = function () {
+//        console.log(document.body.scrollTop);
+
+        //兼容性不好
+        document.title = document.body.scrollTop.toString()+"    "+document.body.scrollLeft.toString();
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<script src="../jquery-1.11.1.js"></script>
+<script>
+    $(window).ready(function () {
+        var jqLi = $("li");
+        for (var i = 0; i < jqLi.length; i++) {
+            if (i % 2 === 0) {
+                jqLi[i].style.backgroundColor = "red";
+            }else {
+                jqLi[i].style.backgroundColor = "yellow";
+
+
+            }
+        }
+    });
+
+
+</script>
+<body>
+
+<ul>
+    <li>我今天真的很高兴！！</li>
+    <li>我今天真的很高兴！！</li>
+    <li>我今天真的很高兴！！</li>
+    <li>我今天真的很高兴！！</li>
+    <li>我今天真的很高兴！！</li>
+    <li>我今天真的很高兴！！</li>
+</ul>
+</body>
+</html>

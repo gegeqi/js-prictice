@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        .box1 {
+            margin: 0;
+            /*padding: 5px;*/
+            position: relative;
+            height: 200px;
+            background-color: #ccc;
+        }
+
+        button {
+            margin: 5px;
+        }
+
+        .box2 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+            top: 40px;
+        }
+
+        .box3 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            top: 150px;
+        }
+    </style>
+</head>
+<body>
+<div class="box1">
+    <button>运动到200</button>
+    <button>运动到400</button>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</div>
+
+<script>
+    var btnArr = document.getElementsByTagName("button");
+    var box2 = document.getElementsByClassName("box2")[0];
+    var box3 = document.getElementsByClassName("box3")[0];
+
+
+    //闪动
+    //    btn.onclick = function () {
+    //        div.style.left = "500px";
+    //    }
+
+
+    btnArr[0].onclick = function () {
+        animate(box2, 200);
+    }
+
+    btnArr[1].onclick = function () {
+        animate(box3, 400);
+    }
+
+    function animate(ele, target) {
+
+        //要先清除定时器
+        //一个盒子只能有一个定时器，这样的话
+        clearInterval(ele.timer);
+        //要求盒子既能向前，也能向后，步长就应该有正有负
+
+        var speed = target > ele.offsetLeft ? 10 : -10;
+        ele.timer = setInterval(function () {
+
+            var val = target - ele.offsetLeft;
+            ele.style.left = ele.offsetLeft + speed + "px";
+            if (Math.abs(val) < Math.abs(speed)) {
+                ele.style.left = target + "px";
+                clearInterval(ele.timer);
+            }
+        }, 30)
+
+    }
+
+
+</script>
+
+</body>
+</html>

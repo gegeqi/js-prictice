@@ -67,3 +67,21 @@ function getAllSiblings(ele) {
 function getEle(id) {
     return document.getElementById(id);
 }
+
+/**
+ * 通过传递不同的参数获取不同的元素
+ * @param str
+ * @returns {string}
+ */
+function $(str) {
+    var firstChar = str.charAt(0);
+    var getEle = "";
+    if (firstChar === "#") {
+        getEle = document.getElementById(str.slice(1));
+    } else if (firstChar === ".") {
+        getEle = document.getElementsByClassName(str.slice(1));
+    } else {
+        getEle = document.getElementsByTagName(str);
+    }
+    return getEle;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+//    document.onclick = function () {
+//        console.log(event);
+//    }
+
+    //经常使用下面的方法(兼容ie678)
+    document.onclick = function (event) {
+        event = event || window.event;
+
+        console.log(event);
+    }
+
+
+</script>
+</body>
+</html>

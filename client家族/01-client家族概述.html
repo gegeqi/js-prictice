@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            padding: 100px;
+            margin: 100px;
+            border: 10px solid #000;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+
+<script>
+    var box = document.getElementsByTagName("div")[0];
+
+    //不包括border和margin padding+width
+    console.log(box.clientWidth);
+    console.log(box.clientHeight);
+
+    //border clientTop获取上border
+    console.log(box.clientTop);
+    console.log(box.clientLeft);
+</script>
+</body>
+</html>

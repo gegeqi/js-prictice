@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    var str = "abcdef";
+
+    console.log(str.indexOf("c"));
+    console.log(str.lastIndexOf("c"));
+
+
+    //了解(数据传递的时候通常需要编码后传递，接收后还需要反编译回来)
+    var url = "http://www.baidu.com?username='aaa'&password='123'";
+
+    console.log(encodeURIComponent(url));
+    console.log(decodeURIComponent(encodeURIComponent(url)));
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            left: 400px;
+        }
+    </style>
+</head>
+<body>
+
+<button>运动到400</button>
+<div></div>
+
+<script>
+
+    var btn = document.getElementsByTagName("button")[0];
+    var div = document.getElementsByTagName("div")[0];
+
+
+    btn.onclick = fn;
+    var timer = null;
+
+    function fn() {
+        //缓动：如何缓动？步长越来越小
+        //步长用目标和盒子自身位置的十分之一
+
+        //要用定时器，先清除定时器
+
+        clearInterval(timer);
+
+        timer = setInterval(function () {
+            var target = 0;
+
+            //最后十像素一像素的走，就能到达指定位置。
+            var step = (target - div.offsetLeft) / 10;
+
+            //获取步长都向上取整，就包含step小于0.4的情况
+            //拓展：当差值大于0，向上取整，小于0，向下取整。
+            step = 0 > div.offsetLeft ? Math.ceil(step) : Math.floor(step);
+
+            //动画原理：盒子未来位置等于当前位置加上步长
+            div.style.left = div.offsetLeft + step + "px";
+
+            if (Math.abs(target - div.offsetLeft) < Math.abs(step)) {
+                div.style.left = target + "px";
+                clearInterval(timer);
+            }
+
+        }, 30);
+
+    }
+</script>
+
+</body>
+</html>

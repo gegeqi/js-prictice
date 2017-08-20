@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    var str1 = "abc";
+    var str2 = "123";
+
+    //concat 连接两个字符串，返回一个新字符串，不会修改之前的字符串
+    var str3 = str1.concat(str2);
+
+
+    console.log(str1);
+    console.log(str2);
+    console.log(str3);
+
+    var str = "I love my family!";
+
+    console.log(str);
+    //slice();
+    console.log(str.slice(2)); //从索引截取到最后
+    console.log(str.slice(2, 6)); //从2到6截取，包含左边不包含右边
+    console.log(str.slice(-3)); //后几个
+    console.log(str.slice(5, 2)); //空字符串
+
+
+    //substr()  从索引截取到最后
+
+    console.log(str.substr(2)); //从索引截取到最后
+    console.log(str.substr(2, 6)); //从第二位开始截取，截取6位
+    console.log(str.substr(-3)); //后几个
+
+    //substring()  从索引截取到最后
+
+    console.log(str.substring(2)); //从索引截取到最后
+    console.log(str.substring(2, 6)); //从第二位开始截取，包含左边不包含右边
+    console.log(str.substring(-3)); //全部截取
+    console.log(str.substring(5, 2)); //只能调换
+
+
+</script>
+</body>
+</html>

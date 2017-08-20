@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    var str = "  你好  我很好   ";
+
+//    console.log(str);
+//    console.log(str.trim());
+
+    console.log(trim(str));
+
+    function trim(str) {
+        return str.replace(/(^\s)|(\s$)/g, "");
+    }
+
+
+</script>
+</body>
+</html>

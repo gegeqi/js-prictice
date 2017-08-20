@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var str = "aaa啦啦";
+    //    一个汉字占两个字符位
+
+    //    需求：求一个字符串占几个字符位
+
+    alert(getZFWlength(str));
+
+    function getZFWlength(str) {
+        var count = 0;
+        for (var i = 0; i < str.length; i++) {
+            if (str.charCodeAt(i) < 128 && str.charCodeAt(i) >= 0) {
+                count++;
+            } else {
+                count += 2;
+            }
+        }
+        return count;
+    }
+</script>
+</body>
+</html>

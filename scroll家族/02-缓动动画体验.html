@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+
+<button>运动到400</button>
+<div></div>
+
+<script>
+
+    var btn = document.getElementsByTagName("button")[0];
+    var div = document.getElementsByTagName("div")[0];
+
+
+    btn.onclick = fn;
+    function fn() {
+        //缓动：如何缓动？步长越来越小
+        //步长用目标和盒子自身位置的十分之一
+
+        setInterval(function () {
+            var target = 400;
+            var step = (target - div.offsetLeft) / 10;
+
+            //动画原理：盒子未来位置等于当前位置加上步长
+            div.style.left = div.offsetLeft + step + "px";
+        }, 30);
+
+    }
+</script>
+
+</body>
+</html>
