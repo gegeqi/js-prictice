@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        .current {
+            background-color: red;
+
+        }
+    </style>
+
+    <script src="../jquery-1.11.1.js"></script>
+    <script>
+        $(function () {
+//            $("button").eq(0).click(function () {
+//                $("div").addClass("current");
+//            });
+//
+//            $("button").eq(1).click(function () {
+//                $("div").removeClass("current");
+//            });
+
+            $("button").click(function () {
+                $("div").toggleClass("current");
+            });
+
+        })
+
+
+    </script>
+</head>
+<body>
+
+<button>变色</button>
+<div></div>
+</body>
+</html>

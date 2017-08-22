@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            display: none;
+            /*opacity: 0;*/
+        }
+
+    </style>
+
+    <script src="../jquery-1.11.1.js"></script>
+    <script>
+        $(function () {
+            $("button:eq(0)").click(function () {
+                //滑入动画，用法一： slideDown（） 不加参数
+//                $("div").slideDown();  //底层通过display:block 实现的
+
+                //滑入动画，用法二： slideDown（毫秒值） 加参数
+//                $("div").slideDown(2000); //通过控制宽高 display opacity 实现
+
+                //滑入动画，用法三  slideDown(字符串) slow慢：600ms  normal：400ms  fast:200ms
+//                $("div").slideDown("slow");
+//                $("div").slideDown("normal");
+//                $("div").slideDown("fast");
+//                $("div").slideDown("jlfjowuuw");
+
+                //滑入动画，用法四  show(毫秒值，function(){})
+                $("div").slideDown(3000, function () {
+
+                });
+            });
+
+            $("button:eq(1)").click(function () {
+                //滑出动画，用法一： slideUp（） 不加参数
+//                $("div").slideUp();  //底层通过display:block 实现的
+
+                //滑出动画，用法二： slideUp（毫秒值） 加参数
+//                $("div").slideUp(2000); //通过控制宽高 display opacity 实现
+
+                //滑出动画，用法三  slideUp(字符串) slow慢：600ms  normal：400ms  fast:200ms
+//                $("div").slideUp("slow");
+//                $("div").slideUp("normal");
+//                $("div").slideUp("fast");
+//                $("div").slideUp("jlfjowuuw");
+
+                //滑出动画，用法四  slideUp(毫秒值，function(){})
+                $("div").slideUp(3000, function () {
+
+                });
+            });
+            
+            $("button:eq(2)").click(function () {
+                //显示隐藏切换
+                //同样四种方法
+                $("div").slideToggle(2000);
+            });
+
+        })
+
+    </script>
+</head>
+<body>
+<button>滑入</button>
+<button>滑出</button>
+<button>切换</button>
+<div></div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            display: none;
+            /*opacity: 0;*/
+        }
+
+    </style>
+
+    <script src="../jquery-1.11.1.js"></script>
+    <script>
+        $(function () {
+            $("button:eq(0)").click(function () {
+                $("div").slideDown(3000);
+            });
+
+            $("button:eq(1)").click(function () {
+                $("div").slideUp(3000);
+            });
+
+            $("button:eq(2)").click(function () {
+//                $("div").stop();  两个都不写  默认都是false
+
+                //第一个参数表示后续动画是否执行(true 是不执行，false 是执行)
+                //第二个餐主表示当前动画是否执行完
+
+                //四种情况一： （true true）
+                //（后续动画不执行,立即执行完当前动画）
+//                $("div").stop(true, true);
+
+                //四种情况二： （false true）
+                //（后续动画执行,立即执行完当前动画）
+//                $("div").stop(false, true);
+
+
+                //四种情况三： （true false）
+                //（后续动画不执行,立即停止当前动画）
+//                $("div").stop(true, false);
+
+                //四种情况四： （false false）
+                //（后续动画不执行,立即执行完当前动画）
+                $("div").stop(false, false);
+
+            });
+
+        })
+
+    </script>
+</head>
+<body>
+<button>滑入</button>
+<button>滑出</button>
+<button>停止</button>
+<div></div>
+</body>
+</html>

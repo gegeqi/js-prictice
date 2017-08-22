@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="demo.css">
+    <script src="../../jquery-1.11.1.js"></script>
+    <script>
+        //需求1：点击按钮显示遮罩层添加数据表格
+        //需求2：点击里面关闭按钮隐藏遮罩层和添加数据表格
+        //需求3：点击get所在标签，删除所在tr
+        //需求4：点击里面的添加内容，全部成tr嵌套td的形式，添加到tbody中
+
+        $(function () {
+            //需求1：点击按钮显示遮罩层添加数据表格
+            $("#j_btnAddData").click(function () {
+                $("#j_mask").show();
+                $("#j_formAdd").show();
+            });
+            //需求2：点击里面关闭按钮隐藏遮罩层和添加数据表格
+
+            $("#j_hideFormAdd").click(function () {
+                $("#j_mask").hide();
+                $("#j_formAdd").hide();
+            });
+            //需求3：点击get所在标签，删除所在tr
+            $("#j_tb .get").click(function () {
+                $(this).parent("td").parent("tr").remove();
+            });
+            //需求4：点击里面的添加内容，全部成tr嵌套td的形式，添加到tbody中
+            $("#j_btnAdd").click(function () {
+
+                //先获取tbody中的内容，然后在添加后面的内容
+                //获取tr，为tr赋值，在添加进tbody中
+
+                //bug1:内容不能为空
+                if($("#j_txtLesson").val()==="" || $("#j_txtBelSch").val() === ""){
+                    alert("内容不能为空");
+                    return;
+                }
+
+                var tr = $("<tr></tr>");
+                tr.html('<td>'+$("#j_txtLesson").val()+'</td><td>'+$("#j_txtBelSch").val()+'</td><td><a href="javascrip:;" class="get">GET</a></td>');
+
+                $("#j_tb").append(tr);
+
+                $("#j_mask").hide();
+                $("#j_formAdd").hide();
+
+                //bug2:设置完后，清空里面的值
+                $("#j_txtLesson").val("");
+
+
+                //bug3：新添加的元素中，没有绑定事件
+                tr.find("a").click(function () {
+                    $(this).parent("td").parent("tr").remove();
+                });
+            });
+
+        });
+
+
+    </script>
+</head>
+<body>
+<div class="wrap">
+    <div>
+        <input type="button" value="添加数据" id="j_btnAddData" class="btnAdd"/>
+    </div>
+    <table>
+        <thead>
+        <tr>
+            <!-- <th><input type="checkbox" id="j_cbAll" /></th> -->
+            <th>课程名称</th>
+            <th>所属学院</th>
+            <th>已学会</th>
+        </tr>
+        </thead>
+        <tbody id="j_tb">
+        <tr>
+            <!-- <td><input type="checkbox"/></td> -->
+            <td>JavaScript</td>
+            <td>传智播客-前端与移动开发学院</td>
+            <td><a href="javascrip:;" class="get">GET</a></td>
+        </tr>
+        <tr>
+            <!-- <td><input type="checkbox"/></td> -->
+            <td>css</td>
+            <td>传智播客-前端与移动开发学院</td>
+            <td><a href="javascrip:;" class="get">GET</a></td>
+        </tr>
+        <tr>
+            <!-- <td><input type="checkbox"/></td> -->
+            <td>html</td>
+            <td>传智播客-前端与移动开发学院</td>
+            <td><a href="javascrip:;" class="get">GET</a></td>
+        </tr>
+        <tr>
+            <!-- <td><input type="checkbox"/></td> -->
+            <td>jQuery</td>
+            <td>传智播客-前端与移动开发学院</td>
+            <td><a href="javascrip:;" class="get">GET</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div id="j_mask" class="mask"></div>
+<div id="j_formAdd" class="form-add">
+    <div class="form-add-title">
+        <span>添加数据</span>
+        <div id="j_hideFormAdd">x</div>
+    </div>
+    <div class="form-item">
+        <label class="lb" for="j_txtLesson">课程名称：</label>
+        <input class="txt" type="text" id="j_txtLesson" placeholder="请输入课程名称">
+    </div>
+    <div class="form-item">
+        <label class="lb" for="j_txtBelSch">所属学院：</label>
+        <input class="txt" type="text" id="j_txtBelSch" value="传智播客-前端与移动开发学院">
+    </div>
+    <div class="form-submit">
+        <input type="button" value="添加" id="j_btnAdd">
+    </div>
+</div>
+
+</body>
+</html>

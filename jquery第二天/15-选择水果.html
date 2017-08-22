@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        select {
+            width: 170px;
+            height: 240px;
+            font-size: 18px;
+            background: #a4ff34;
+        }
+    </style>
+
+    <script src="../jquery-1.11.1.js"></script>
+    <script>
+        $(function () {
+            //需求1：点击前两个标签，让一侧的到达另一侧
+            //需求2：点击后两个标签，让一侧的被选中的跳转到另一侧
+
+            $("button:eq(0)").click(function () {
+                $("#sel2").append($("#sel1 option"));
+            });
+
+            $("button:eq(1)").click(function () {
+                $("#sel1").append($("#sel2 option"));
+            });
+
+
+            //需求2：点击后两个标签，让一侧的被选中的跳转到另一侧
+            $("button:eq(2)").click(function () {
+
+                //技术点 :selected 获取被选中的子元素
+                $("#sel2").append($("#sel1 option:selected"));
+            });
+
+            $("button:eq(3)").click(function () {
+                $("#sel1").append($("#sel2 option:selected"));
+            });
+        });
+
+    </script>
+</head>
+<body>
+<select id="sel1" size="10" multiple>
+    <option value="">香蕉</option>
+    <option value="">苹果</option>
+    <option value="">鸭梨</option>
+    <option value="">葡萄</option>
+</select>
+
+<button>>>>></button>
+<button><<<<</button>
+<button>></button>
+<button><</button>
+<select id="sel2" size="10" multiple>
+
+</select>
+</body>
+</html>

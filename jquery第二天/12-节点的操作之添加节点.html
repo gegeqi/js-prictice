@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-1.11.1.js"></script>
+    <script>
+
+        $(function () {
+            $("button").click(function () {
+                //新建一个新的jq li
+                var jqNewLi = $("<li>我是jq li 使用append方法</li>")
+                //append() 在盒子末尾添加
+                //在盒子中添加
+//                $("ul").append(jqNewLi);
+
+                //appendTo()
+//                jqNewLi.appendTo($("ul"));
+
+                //在盒子最前面添加
+//                $("ul").prepend(jqNewLi);
+//                jqNewLi.prepend($("ul"));
+
+
+                //下面两个是操作兄弟元素的
+//                after()
+//                $("li").after(jqNewLi);
+
+//                before()
+                $("li").before(jqNewLi);
+            });
+        });
+
+    </script>
+</head>
+<body>
+<button>添加li</button>
+<ul>
+    <li>我是土著li</li>
+</ul>
+</body>
+</html>

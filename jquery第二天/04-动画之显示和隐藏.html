@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            display: none;
+            /*opacity: 0;*/
+        }
+
+    </style>
+
+    <script src="../jquery-1.11.1.js"></script>
+    <script>
+        $(function () {
+            $("button:eq(0)").click(function () {
+                //显示动画，用法一： show（） 不加参数
+//                $("div").show();  //底层通过display:block 实现的
+
+                //显示动画，用法二： show（毫秒值） 加参数
+//                $("div").show(2000); //通过控制宽高 display opacity 实现
+
+                //显示动画，用法三  show(字符串) slow慢：600ms  normal：400ms  fast:200ms
+//                $("div").show("slow");
+//                $("div").show("normal");
+//                $("div").show("fast");
+//                $("div").show("jlfjowuuw");
+
+                //显示动画，用法四  show(毫秒值，function(){})
+                $("div").show(3000, function () {
+                    alert("显示完毕！");
+                });
+            });
+
+            $("button:eq(1)").click(function () {
+                //显示动画，用法一： hide（） 不加参数
+//                $("div").hide();  //底层通过display:block 实现的
+
+                //显示动画，用法二： hide（毫秒值） 加参数
+//                $("div").hide(2000); //通过控制宽高 display opacity 实现
+
+                //显示动画，用法三  hide(字符串) slow慢：600ms  normal：400ms  fast:200ms
+//                $("div").hide("slow");
+//                $("div").hide("normal");
+//                $("div").hide("fast");
+//                $("div").hide("jlfjowuuw");
+
+                //显示动画，用法四  hide(毫秒值，function(){})
+                $("div").hide(3000, function () {
+                    alert("显示完毕！");
+                });
+            });
+            
+            $("button:eq(2)").click(function () {
+                //显示隐藏切换
+                //同样四种方法
+                $("div").toggle(2000);
+            });
+        })
+
+    </script>
+</head>
+<body>
+<button>显示</button>
+<button>隐藏</button>
+<button>切换</button>
+<div></div>
+</body>
+</html>

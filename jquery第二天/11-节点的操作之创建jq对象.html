@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-1.11.1.js"></script>
+    <script>
+
+        $(function () {
+            //创建节点1: $("标签")  类比于原生js中的document.createElement("li")
+            console.log($("<li class='aaa'></li>"));
+
+            //创建节点2: $("ul").html()  类比于原生js中的innerHtml属性
+            $("ul").html("<li>我是html方法创建的</li>");
+        })
+
+    </script>
+</head>
+<body>
+<ul></ul>
+</body>
+</html>

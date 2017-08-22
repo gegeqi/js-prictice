@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+
+    <script src="../jquery-1.11.1.js"></script>
+    <script>
+        $(function () {
+            $("button").click(function () {
+                var json = {'width': 300, "height": 300, "left":300,"top":300,"border-radius":10};
+
+                //自定义动画
+                $("div").animate(json, 2000, function () {
+
+                })
+            });
+        })
+    </script>
+</head>
+<body>
+<button>动画</button>
+<div></div>
+</body>
+</html>
